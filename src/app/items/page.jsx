@@ -1,23 +1,9 @@
+import { api } from '@/app/api';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const API = `https://api.mercadolibre.com/sites/MLA/search?q=`;
-const OPTIONS = `&limit=4#json`;
-
 export default async function ItemsPage({ searchParams }) {
-	const { search } = searchParams;
-	let results = [];
-	try {
-		const response = await fetch(`${API}${search}${OPTIONS}`);
-		if (!response.ok) {
-			throw new Error(`Error fetching data: ${response.status}`);
-		}
-		const data = await response.json();
-		results = data.results || [];
-	} catch (error) {
-		console.error(`Error fetching data: ${error.message}`);
-		throw new Error(`Error fetching data: ${error.message}`);
-	}
+	const results = await api.item.search(searchParams.search);
 	return (
 		<section>
 			<article>
