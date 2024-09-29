@@ -23,7 +23,15 @@ export default function RootLayout({ children }) {
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
-				{children}
+				<header className="h-16 bg-yellow-200 px-4 flex">
+					<form action="/items" className="m-auto max-w-screen-xl flex-1 flex">
+						<input type="text" name="search" className="h-8 flex-1" />
+						<button type="submit" className="text-slate-700 px-2 bg-gray-300">
+							Search
+						</button>
+					</form>
+				</header>
+				<main className="max-w-screen-xl p-4">{children}</main>
 			</body>
 		</html>
 	);
