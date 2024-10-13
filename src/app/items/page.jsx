@@ -1,6 +1,7 @@
 import { api } from '@/app/api';
 import Image from 'next/image';
 import Link from 'next/link';
+import { toEuro } from '@/app/utils';
 
 export default async function ItemsPage({ searchParams }) {
 	const results = await api.item.search(searchParams.search);
@@ -20,12 +21,7 @@ export default async function ItemsPage({ searchParams }) {
 						className="p-4"
 					/>
 					<div className="px-3 py-6">
-						<p className="font-bold">
-							{Number(item.price).toLocaleString('es-AR', {
-								style: 'currency',
-								currency: item.currency_id,
-							})}
-						</p>
+						<p className="font-bold">{toEuro(item.price)}</p>
 						<p>{item.title}</p>
 					</div>
 				</Link>

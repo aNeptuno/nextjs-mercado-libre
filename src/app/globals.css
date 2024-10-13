@@ -5,3 +5,10 @@
 body {
 	@apply bg-slate-50;
 }
+
+@media screen and (max-width: 1024px) {
+	.item-img {
+		max-width: 300px;
+		margin: auto;
+	}
+}
