@@ -1,4 +1,5 @@
 import { api } from '@/app/api';
+import BuyButton from '@/app/components/BuyButton';
 import Image from 'next/image';
 
 export default async function ItemPage({ params: { id } }) {
@@ -12,7 +13,7 @@ export default async function ItemPage({ params: { id } }) {
 					src={item.pictures[0].secure_url}
 					alt={item.title}
 				/>
-				<div className="flex flex-col md:px-5 pt-5 md:pt-0">
+				<div className="flex flex-col md:px-8 pt-5 md:pt-0">
 					<p className="capitalize">{item.condition}</p>
 					<h2 className="font-bold py-2">{item.title}</h2>
 					<p className="text-2xl">
@@ -21,9 +22,7 @@ export default async function ItemPage({ params: { id } }) {
 							currency: item.currency_id,
 						})}
 					</p>
-					<button className="bg-blue-500 text-white py-2 mt-6 rounded">
-						Comprar
-					</button>
+					<BuyButton />
 				</div>
 			</div>
 			<div className="flex flex-col p-4">

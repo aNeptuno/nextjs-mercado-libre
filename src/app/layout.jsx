@@ -1,6 +1,7 @@
 import localFont from 'next/font/local';
 import './globals.css';
 import Link from 'next/link';
+import { TiShoppingCart } from 'react-icons/ti';
 
 const geistSans = localFont({
 	src: './fonts/GeistVF.woff',
@@ -29,23 +30,29 @@ export default function RootLayout({ children }) {
 						action="/items"
 						className="m-auto max-w-screen-xl flex-1 flex items-center"
 					>
-						<Link href="/" className="text-center pr-4">
-							OpenMercado
+						<Link
+							href="/"
+							className="text-center pr-4 flex flex-row items-center"
+						>
+							Open
+							<TiShoppingCart />
+							Mercado
 						</Link>
 						<input
 							type="text"
 							name="search"
 							className="h-8 flex-1 text-slate-700 px-4"
+							placeholder="Buscar algo..."
 						/>
 						<button
 							type="submit"
-							className="text-slate-700 px-2 py-1 bg-gray-300"
+							className="text-slate-700 px-2 py-1 @apply bg-slate-200"
 						>
 							Search
 						</button>
 					</form>
 				</header>
-				<main className="max-w-screen-xl px-16 py-10">{children}</main>
+				<main className="max-w-screen-xl px-16 py-10 m-auto">{children}</main>
 			</body>
 		</html>
 	);

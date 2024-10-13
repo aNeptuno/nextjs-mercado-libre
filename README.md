@@ -1,6 +1,6 @@
 # 🛒 OpenMercado App
 
-Welcome to **OpenMercado**, a frontend project created as part of a frontend test provided by **MercadoLibre**. I am implementing this project to enhance my skills and gain practical experience. The application is built using **Next.js** and **Tailwind CSS**, and includes end-to-end testing with **Playwright** to ensure functionality and reliability.
+Welcome to **OpenMercado**! This is a prototype of an e-commerce web application built with **Next.js** and **Tailwind CSS** that utilizes the [MercadoLibre API](https://api.mercadolibre.com) to provide dynamic product data. It also incorporates end-to-end testing with **Playwright** to ensure functionality and reliability.
 
 ## 🚀 Features
 
