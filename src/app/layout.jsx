@@ -25,14 +25,14 @@ export default function RootLayout({ children }) {
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
-				<header className="h-16 bg-yellow-200 px-16 flex">
+				<header className="h-16 bg-yellow-200 px-6 md:px-16 flex overflow-x-hidden">
 					<form
 						action="/items"
 						className="m-auto max-w-screen-xl flex-1 flex items-center"
 					>
 						<Link
 							href="/"
-							className="text-center pr-4 flex flex-row items-center"
+							className="hidden md:flex text-center pr-4 flex-row items-center"
 						>
 							Open
 							<TiShoppingCart />
@@ -52,7 +52,9 @@ export default function RootLayout({ children }) {
 						</button>
 					</form>
 				</header>
-				<main className="max-w-screen-xl px-16 py-10 m-auto">{children}</main>
+				<main className="max-w-screen-xl px-6 md:px-16 py-10 m-auto">
+					{children}
+				</main>
 			</body>
 		</html>
 	);
